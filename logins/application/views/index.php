@@ -8,6 +8,13 @@
 		padding: 10px;
 		margin: 20px;
 		border: 1px solid silver;
+
+	}
+	.green {
+		color:green;
+	}
+	.red {
+		color:red;
 	}
 	</style>
 </head>
@@ -16,14 +23,18 @@
 <div class="wrapper">
 	<div class="message">
 <?php 
-		echo $messages;
+	if(isset($messages))
+		{
+			echo $messages;
+		}
 ?>
 	</div>
 	<div class="box">
 		<h2>Log In</h2>
 		<form method="post" action="login">
 			<p>Email: <input type="text" name="email"></p>			
-			<p>Password: <input type="text" name="password"></p>
+			<p>Password: <input type="password" name="password"></p>
+			<input type="hidden" name="validation" value="login">
 			<input type="submit" value="Login">			
 		</form>
 	</div>
